@@ -15,15 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Filename : version
+ * Filename : view
  * Author   : John Welch <jwelch@welchitconsulting.co.uk>
- * Created  : 03 Jan 2015
+ * Created  : 19 Mar 2015
  */
 
-defined('MOODLE_INTERNAL') || die();
+require_once('../../config.php');
+require_once($CFG->dirroot . '/local/smartsbridge/framework/bootstrap.php');
 
-$plugin->version   = 2015031900;
-$plugin->requires  = 2013110500;
-$plugin->maturiy   = MATURITY_BETA;
-$plugin->release   = 2015031900;
-$plugin->component = 'local_smartbridge';
+sb_bootstrap::startup();
+sb_controller::render('local/smartsbridge', 'sb_framework', 'local_sb');
