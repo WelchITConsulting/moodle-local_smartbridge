@@ -20,6 +20,7 @@
  * Created  : 25 Mar 2015
  */
 
+require_once( $CFG->dirroot . '/local/smartsbridge/framework/autoload.php' );
 
 class smartsbridge_bootstrap
 {
@@ -37,7 +38,7 @@ class smartsbridge_bootstrap
     public static function shutdown()
     {
         if (self::$init) {
-            mr_autoload::unregister();
+            sb_autoload::unregister();
             self::$init = false;
         }
     }
